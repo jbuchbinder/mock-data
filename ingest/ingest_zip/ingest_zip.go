@@ -17,7 +17,7 @@ func main() {
 	flag.Parse()
 
 	fmt.Printf("package %s\n\n", *Package)
-	fmt.Printf("import _ \"github.com/jbuchbinder/mock-data/types\"\n\n")
+	fmt.Printf("import \"github.com/jbuchbinder/mock-data/types\"\n\n")
 	fmt.Printf("var (\n")
 
 	// Open and parse
@@ -32,7 +32,7 @@ func main() {
 
 	r := csv.NewReader(f)
 
-	fmt.Printf("\tLocations = []Location{\n")
+	fmt.Printf("\tLocations = []types.Location{\n")
 	i := 0
 	for {
 		record, err := r.Read()
@@ -54,7 +54,7 @@ func main() {
 			continue
 		}
 
-		fmt.Printf("\t\t"+`Location{"%s", "%s", "%s", "%s", %s, %s, "%s", %s}, `+"\n", record[0], record[1], record[3], record[4], record[5], record[6], record[7], record[8])
+		fmt.Printf("\t\t"+`types.Location{"%s", "%s", "%s", "%s", %s, %s, "%s", %s}, `+"\n", record[0], record[1], record[3], record[4], record[5], record[6], record[7], record[8])
 		i++
 	}
 	fmt.Printf("\t}\n")

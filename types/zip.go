@@ -5,8 +5,8 @@ type Location struct {
 	City          string
 	State         string
 	LocationType  string
-	Lat           double
-	Long          double
+	Lat           float64
+	Long          float64
 	Location      string
 	Decommisioned bool
 }

@@ -6,9 +6,17 @@ Golang mock data source.
 
 ```
 import (
-	_ "github.com/jbuchbinder/mock-data/types"
+	"github.com/jbuchbinder/mock-data/types"
 	"github.com/jbuchbinder/mock-data/mock"
 )
+
+// Random location
+var t types.Location
+t = mock.GetLocation()
+
+// Names
+isFemale := false
+first, last := types.GetName(isFemale)
 ```
 
 ## SOURCES
