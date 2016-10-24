@@ -13,7 +13,7 @@ import (
 
 var (
 	Path    = flag.String("path", "../../source", "Path to data")
-	Package = flag.String("package", "main", "Go package name")
+	Package = flag.String("package", "data", "Go package name")
 )
 
 func main() {

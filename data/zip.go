@@ -1,18 +1,10 @@
-package main
+package data
 
-type Location struct {
-	Zipcode       string
-	City          string
-	State         string
-	LocationType  string
-	Lat           double
-	Long          double
-	Location      string
-	Decommisioned bool
-}
+import _ "github.com/jbuchbinder/mock-data/types"
 
 var (
-	Locations = []Location{Location{"00705", "STANDARD", "PR", "PRIMARY", 18.14, -66.26, "NA-US-PR-AIBONITO", false},
+	Locations = []Location{
+		Location{"00705", "STANDARD", "PR", "PRIMARY", 18.14, -66.26, "NA-US-PR-AIBONITO", false},
 		Location{"00610", "STANDARD", "PR", "PRIMARY", 18.28, -67.14, "NA-US-PR-ANASCO", false},
 		Location{"00611", "PO BOX", "PR", "PRIMARY", 18.28, -66.79, "NA-US-PR-ANGELES", false},
 		Location{"00612", "STANDARD", "PR", "PRIMARY", 18.45, -66.73, "NA-US-PR-ARECIBO", false},

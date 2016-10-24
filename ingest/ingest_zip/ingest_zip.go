@@ -10,25 +10,14 @@ import (
 
 var (
 	Source  = flag.String("source", "../../source/free-zipcode-database-Primary.csv", "Path to data file")
-	Package = flag.String("package", "main", "Go package name")
+	Package = flag.String("package", "data", "Go package name")
 )
 
 func main() {
 	flag.Parse()
 
 	fmt.Printf("package %s\n\n", *Package)
-	fmt.Printf(`
-typedef Location struct {
-	Zipcode string
-	City string
-	State string
-	LocationType string
-	Lat double
-	Long double
-	Location string
-	Decommisioned bool
-}
-`)
+	fmt.Printf("import _ \"github.com/jbuchbinder/mock-data/types\"\n\n")
 	fmt.Printf("var (\n")
 
 	// Open and parse
@@ -43,7 +32,7 @@ typedef Location struct {
 
 	r := csv.NewReader(f)
 
-	fmt.Printf("\tLocations = []Location{ ")
+	fmt.Printf("\tLocations = []Location{\n")
 	i := 0
 	for {
 		record, err := r.Read()

@@ -2,6 +2,15 @@
 
 Golang mock data source.
 
+## EXAMPLES
+
+```
+import (
+	_ "github.com/jbuchbinder/mock-data/types"
+	"github.com/jbuchbinder/mock-data/mock"
+)
+```
+
 ## SOURCES
 
 | Data | Webpage | Link |
