@@ -54,7 +54,7 @@ func main() {
 			continue
 		}
 
-		fmt.Printf("\t\t"+`types.Location{"%s", "%s", "%s", "%s", %s, %s, "%s", %s}, `+"\n", record[0], record[1], record[3], record[4], record[5], record[6], record[7], record[8])
+		fmt.Printf("\t\t"+`types.Location{"%s", "%s", "%s", "%s", %s, %s, "%s", %s}, `+"\n", record[0], record[2], record[3], record[4], record[5], record[6], record[7], record[8])
 		i++
 	}
 	fmt.Printf("\t}\n")
