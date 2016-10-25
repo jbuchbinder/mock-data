@@ -41,6 +41,14 @@ func GetName(isFemale bool) (string, string) {
 	}
 }
 
+func GetStreetNumber() string {
+	return fmt.Sprintf("%d", Rand.Intn(MaxHouseNumber))
+}
+
+func GetStreetName() string {
+	return fmt.Sprintf("%s %s", strings.ToUpper(data.Streets[Rand.Intn(len(data.Streets))]), strings.ToUpper(Suffixes[Rand.Intn(len(Suffixes))]))
+}
+
 func GetStreetAddress() string {
 	return fmt.Sprintf("%d %s %s", Rand.Intn(MaxHouseNumber), strings.ToUpper(data.Streets[Rand.Intn(len(data.Streets))]), strings.ToUpper(Suffixes[Rand.Intn(len(Suffixes))]))
 }
