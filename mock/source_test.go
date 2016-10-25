@@ -13,7 +13,7 @@ func Benchmark1MData(b *testing.B) {
 		fname, lname := GetName(gender)
 		addr := GetStreetAddress()
 		loc := GetLocation()
-		b.Logf("%d : %s %s / %s / %s, %s %s", i, fname, lname, addr, loc.City, loc.State, loc.Zipcode)
+		b.Logf("%d : %s %s / %s / %s, %s %s / %s", i, fname, lname, addr, loc.City, loc.State, loc.Zipcode, GetPhoneNumber())
 	}
 	b.StopTimer()
 }

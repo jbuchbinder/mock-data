@@ -11,6 +11,8 @@ import (
 
 var (
 	MaxHouseNumber = 10000
+	NumAll         = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+	NumLimited     = []string{"2", "3", "4", "5", "6", "7", "8", "9"}
 	Suffixes       = []string{"Ave", "Blvd", "Ct", "Ctr", "Dr", "Jct", "Ln", "Pt", "Rd", "St", "Sq", "Way"}
 	Rand           *rand.Rand
 )
@@ -37,4 +39,17 @@ func GetStreetAddress() string {
 
 func GetLocation() types.Location {
 	return data.Locations[Rand.Intn(len(data.Locations))]
+}
+
+func GetPhoneNumber() string {
+	return fmt.Sprintf("%s%s%s%s%s%s%s%s%s%s", getRandomDigit(false), getRandomDigit(false), getRandomDigit(true), getRandomDigit(true), getRandomDigit(true), getRandomDigit(true), getRandomDigit(true), getRandomDigit(true), getRandomDigit(true), getRandomDigit(true))
+}
+
+func getRandomDigit(includeZeroAndOne bool) string {
+	if includeZeroAndOne {
+		return NumAll[Rand.Intn(len(NumAll))]
+	} else {
+		return NumLimited[Rand.Intn(len(NumLimited))]
+	}
+	return ""
 }
