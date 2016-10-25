@@ -25,6 +25,14 @@ func InitRNG() {
 	Rand = rand.New(rand.NewSource(time.Now().UnixNano()))
 }
 
+func GetArbitrary(items []string) string {
+	return items[Rand.Intn(len(items))]
+}
+
+func GetEmail(first, last string) string {
+	return fmt.Sprintf("%s%s%d@example.com", strings.ToLower(first[0:1]), strings.ToLower(last), Rand.Int())
+}
+
 func GetName(isFemale bool) (string, string) {
 	if isFemale {
 		return data.NameGivenFemale[Rand.Intn(len(data.NameGivenFemale))], data.NameSurname[Rand.Intn(len(data.NameSurname))]
