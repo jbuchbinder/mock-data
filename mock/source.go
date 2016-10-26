@@ -41,6 +41,19 @@ func GetName(isFemale bool) (string, string) {
 	}
 }
 
+func GetNameGenderless() (string, string) {
+	return GetName(Rand.Float64() < .5)
+}
+
+func GetFullName(isFemale bool) string {
+	first, last := GetName(isFemale)
+	return first + " " + last
+}
+
+func GetFullNameGenderless() string {
+	return GetFullName(Rand.Float64() < .5)
+}
+
 func GetStreetNumber() string {
 	return fmt.Sprintf("%d", Rand.Intn(MaxHouseNumber))
 }
