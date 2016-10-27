@@ -26,7 +26,7 @@ func InitRNG() {
 }
 
 func GetArbitrary(items []string) string {
-	return items[Rand.Intn(len(items))]
+	return items[Rand.Intn(len(items)-1)]
 }
 
 func GetEmail(first, last string) string {
@@ -35,9 +35,9 @@ func GetEmail(first, last string) string {
 
 func GetName(isFemale bool) (string, string) {
 	if isFemale {
-		return data.NameGivenFemale[Rand.Intn(len(data.NameGivenFemale))], data.NameSurname[Rand.Intn(len(data.NameSurname))]
+		return data.NameGivenFemale[Rand.Intn(len(data.NameGivenFemale)-1)], data.NameSurname[Rand.Intn(len(data.NameSurname)-1)]
 	} else {
-		return data.NameGivenMale[Rand.Intn(len(data.NameGivenMale))], data.NameSurname[Rand.Intn(len(data.NameSurname))]
+		return data.NameGivenMale[Rand.Intn(len(data.NameGivenMale)-1)], data.NameSurname[Rand.Intn(len(data.NameSurname)-1)]
 	}
 }
 
@@ -59,15 +59,15 @@ func GetStreetNumber() string {
 }
 
 func GetStreetName() string {
-	return fmt.Sprintf("%s %s", strings.ToUpper(data.Streets[Rand.Intn(len(data.Streets))]), strings.ToUpper(Suffixes[Rand.Intn(len(Suffixes))]))
+	return fmt.Sprintf("%s %s", strings.ToUpper(data.Streets[Rand.Intn(len(data.Streets)-1)]), strings.ToUpper(Suffixes[Rand.Intn(len(Suffixes)-1)]))
 }
 
 func GetStreetAddress() string {
-	return fmt.Sprintf("%d %s %s", Rand.Intn(MaxHouseNumber), strings.ToUpper(data.Streets[Rand.Intn(len(data.Streets))]), strings.ToUpper(Suffixes[Rand.Intn(len(Suffixes))]))
+	return fmt.Sprintf("%d %s %s", Rand.Intn(MaxHouseNumber), strings.ToUpper(data.Streets[Rand.Intn(len(data.Streets)-1)]), strings.ToUpper(Suffixes[Rand.Intn(len(Suffixes)-1)]))
 }
 
 func GetLocation() types.Location {
-	return data.Locations[Rand.Intn(len(data.Locations))]
+	return data.Locations[Rand.Intn(len(data.Locations)-1)]
 }
 
 func GetPhoneNumber() string {
@@ -76,9 +76,9 @@ func GetPhoneNumber() string {
 
 func getRandomDigit(includeZeroAndOne bool) string {
 	if includeZeroAndOne {
-		return NumAll[Rand.Intn(len(NumAll))]
+		return NumAll[Rand.Intn(len(NumAll)-1)]
 	} else {
-		return NumLimited[Rand.Intn(len(NumLimited))]
+		return NumLimited[Rand.Intn(len(NumLimited)-1)]
 	}
 	return ""
 }
