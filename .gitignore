@@ -1,3 +1,4 @@
 ingest/ingest_names/ingest_names
 ingest/ingest_streets/ingest_streets
 ingest/ingest_zip/ingest_zip
+go.sum
